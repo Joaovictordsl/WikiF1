@@ -12,18 +12,22 @@ struct ContentView: View {
     @State var Height: CGFloat = 140
     
     var body: some View {
-        ScrollView {
+        ScrollView(showsIndicators: false) {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: Height), spacing: 10)], spacing: 10) {
-                ForEach (viewModel.drivers, id: \.self) { driver in
+                ForEach (viewModel.drivers.prefix(10), id: \.self) { driver in
                     ZStack {
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .frame(height: Height)
                         
-                            LinearGradient(colors: [.black, .white], startPoint: .top, endPoint: .bottomTrailing)
+                        LinearGradient(colors: [.black, .white], startPoint: .top, endPoint: .bottomTrailing)
                             .cornerRadius(10)
                             .ignoresSafeArea()
-                        Text(driver.full_name)
-                            .foregroundColor(.white)
+                        VStack {
+                            Text(String(driver.driver_number))
+                                .foregroundStyle(.white)
+                            Text(driver.full_name)
+                                .foregroundColor(.white)
+                        }
                     }
                     
                 }
