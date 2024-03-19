@@ -18,6 +18,10 @@ struct ContentView: View {
                     ZStack {
                         RoundedRectangle(cornerRadius: 10, style: .continuous)
                             .frame(height: Height)
+                        
+                            LinearGradient(colors: [.black, .white], startPoint: .top, endPoint: .bottomTrailing)
+                            .cornerRadius(10)
+                            .ignoresSafeArea()
                         Text(driver.full_name)
                             .foregroundColor(.white)
                     }
