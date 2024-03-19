@@ -31,5 +31,4 @@ class ViewModel: ObservableObject {
         task.resume()
     }
     
-    
 }
