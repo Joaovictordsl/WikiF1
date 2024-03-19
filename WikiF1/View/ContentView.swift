@@ -12,8 +12,6 @@ struct ContentView: View {
     @State var Height: CGFloat = 140
     
     var body: some View {
-        //NavigationView {
-        
         ScrollView {
             LazyVGrid(columns: [GridItem(.adaptive(minimum: Height), spacing: 10)], spacing: 10) {
                 ForEach (viewModel.drivers, id: \.self) { driver in
