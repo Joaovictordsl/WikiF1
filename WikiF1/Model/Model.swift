@@ -10,4 +10,5 @@ import Foundation
 struct Driver: Hashable, Codable {
     let full_name: String
     let driver_number: Int
+    let headshot_url: String?
 }
